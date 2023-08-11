@@ -1,11 +1,11 @@
 variable "region" {
-  type    = string
+  type = string
 }
 
 variable "instanceType" {
-  type    = string
+  type = string
 }
 
 variable "aws_ami" {
-  type    = string
+  type = string
 }

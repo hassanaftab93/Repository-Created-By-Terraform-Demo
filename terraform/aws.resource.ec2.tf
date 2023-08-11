@@ -7,4 +7,5 @@ resource "aws_instance" "web" {
   tags = {
     Name = "aws-first-instance-by-terraform"
   }
+  user_data = file("${path.module}/user-data.sh")
 }

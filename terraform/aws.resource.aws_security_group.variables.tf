@@ -1,3 +1,3 @@
 variable "inboundPorts" {
-  type    = list(number)
+  type = list(number)
 }
