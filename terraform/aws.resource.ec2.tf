@@ -7,5 +7,16 @@ resource "aws_instance" "web" {
   tags = {
     Name = "aws-first-instance-by-terraform"
   }
-  user_data = file("${path.module}/user-data.sh")
+
+  provisioner "file" {
+    destination = "/var/www/html/index.nginx-debian.html"
+    source      = "user-data.sh"
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("~/.ssh/aws")
+      host        = self.public_ip
+    }
+  }
+
 }
