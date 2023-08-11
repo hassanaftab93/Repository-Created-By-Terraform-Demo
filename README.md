@@ -23,13 +23,12 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
       🛠 Strategy
     </h2>
   </summary>
-  In our build pipeline we specify which environment we're deploying to, copying the relevant backend env.tf file to the project_name terraform folder (as backend.tf)
-
-  The env.tfvars files contain environment specific variables (passed in to terraform with -var-file).
-
-  We also use the ARM environment variables, specific to DEV/PROD, for signing in to Azure (ARM_CLIENT_ID, ARM_CLIENT_SECRET etc), which are grabbed from a KeyVault via an Azure DevOps Library / variable group specific for each environment.
-
-  We occasionally use conditional logic in the terraform code to set things based on which environment it is if it's not as simple as being covered by an environment specific variable. E.g. for our DR environment we are using some of the geo-replicated prod resources so we have a check like this against those resources: count = var.env == "DR" ? 0 : 1
+  
+  * SSH-Key -> first-key
+  * * ssh-keygen -t rsa
+  * Assign first-key -> new instance
+  * create security group on aws
+  * assign group to instance
   
 </details>
 
