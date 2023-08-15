@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami                    = var.aws_ami
+  ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.instanceType
   key_name               = aws_key_pair.awskey.key_name
   vpc_security_group_ids = [aws_security_group.security_group.id]
