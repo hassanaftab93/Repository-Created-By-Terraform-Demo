@@ -15,3 +15,7 @@ data "aws_ami" "ubuntu" {
     values = ["${var.virtType}"]
   }
 }
+
+data "aws_ec2_instance_type" "type" {
+  instance_type = var.instanceType
+}
