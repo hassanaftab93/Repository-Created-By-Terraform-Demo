@@ -8,15 +8,40 @@ resource "aws_instance" "web" {
     Name = "aws-first-instance-by-terraform"
   }
 
-  provisioner "file" {
-    destination = "/var/www/html/index.nginx-debian.html"
-    source      = "user-data.sh"
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file("~/.ssh/aws")
-      host        = self.public_ip
-    }
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file("~/.ssh/awskey")
+    host        = self.public_ip
+    agent       = true
+  }
+
+  # # Copy file to VM
+  # provisioner "file" {
+  #   when = create
+  #   on_failure = fail
+  #   destination = "~/user-data.sh"
+  #   source      = "user-data.sh"
+  # }
+
+  # # Add executable rights
+  # provisioner "local-exec" {
+  #   when = create
+  #   on_failure = fail
+  #   command = "chmod +x ./user-data.sh"
+  # }
+
+  # # Execute file on VM
+  # provisioner "local-exec" {
+  #   when = create
+  #   on_failure = fail
+  #   command = "./user-data.sh"
+  # }
+
+  provisioner "remote-exec" {
+    on_failure = fail
+    when       = create
+    script     = "./user-data.sh"
   }
 
 }

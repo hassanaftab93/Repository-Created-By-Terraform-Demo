@@ -7,5 +7,5 @@ output "PrivateIP" {
 }
 
 output "sshCommand" {
-  value = "ssh -i ~/.ssh/aws ubuntu@${aws_instance.web.public_ip}"
+  value = "ssh -i ~/.ssh/awskey ubuntu@${aws_instance.web.public_ip}"
 }
