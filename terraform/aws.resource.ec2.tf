@@ -1,6 +1,6 @@
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = var.instanceType
+  instance_type          = data.aws_ec2_instance_type.type.instance_type
   key_name               = aws_key_pair.awskey.key_name
   vpc_security_group_ids = [aws_security_group.security_group.id]
 
