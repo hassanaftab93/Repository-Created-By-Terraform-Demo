@@ -5,3 +5,7 @@ variable "region" {
 variable "instanceType" {
   type = string
 }
+
+variable "awsInstanceName" {
+  type = string
+}

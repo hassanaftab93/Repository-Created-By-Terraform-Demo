@@ -1,5 +1,5 @@
 resource "aws_security_group" "security_group" {
-  name        = "allow_tls"
+  name        = var.awsSecurityGroupName
   description = "Allow TLS inbound traffic"
 
   dynamic "ingress" {

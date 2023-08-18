@@ -1,0 +1,3 @@
+variable "awsKeyName" {
+  type = string
+}

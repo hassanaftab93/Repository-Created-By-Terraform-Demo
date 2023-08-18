@@ -40,7 +40,7 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
     </h2>
   </summary>
 
-  Step 1
+  Important Commands
   ```bash
     terraform init
     terraform plan -var-file=var.tfvars
@@ -48,6 +48,14 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
     terraform destroy
     terraform destroy -target=resourcename
   ```
+  
+  Extra Commands
+  ```bash
+    terraform graph | dot -Tpdf > graph.pdf
+    terraform graph | dot -Tpdf > ../'terraform graph'/graph.pdf
+  
+  ```
+
 </details>
 
 <!---------------------------------------- SECTION DIVIDER ---------------------------------------->

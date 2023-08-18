@@ -5,7 +5,7 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.security_group.id]
 
   tags = {
-    Name = "aws-first-instance-by-terraform"
+    Name = "${var.awsInstanceName}"
   }
 
   connection {
