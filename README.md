@@ -55,7 +55,7 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
     terraform graph | dot -Tpdf > ../'terraform graph'/graph.pdf
   ```
 
-  Terraform Workspaces
+  Terraform Workspaces: To segregate tfstate files
   ```bash
     terraform workspace help
     terraform workspace new dev
