@@ -53,7 +53,18 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
   ```bash
     terraform graph | dot -Tpdf > graph.pdf
     terraform graph | dot -Tpdf > ../'terraform graph'/graph.pdf
-  
+  ```
+
+  Terraform Workspaces
+  ```bash
+    terraform workspace help
+    terraform workspace new dev
+    terraform workspace new test
+    terraform workspace new prod
+    terraform workspace select dev
+    terraform workspace show
+    terraform workspace list
+    terraform workspace delete test
   ```
 
 </details>
