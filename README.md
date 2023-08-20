@@ -1,7 +1,7 @@
 
 # Terraform Template
 
-<!-- --- DEPLOYMENT STATUS CODE ---
+<!-- --- DEPLOYMENT STATUS CODE -----
 
 Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NAME/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/hassanaftab93/REPO-NAME/actions/workflows/main.yml)
 
