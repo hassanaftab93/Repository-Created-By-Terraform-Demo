@@ -9,3 +9,11 @@ variable "instanceType" {
 variable "awsInstanceName" {
   type = string
 }
+
+variable "key_name" {
+  type = string
+}
+
+variable "securityGroupID" {
+  type = string
+}
