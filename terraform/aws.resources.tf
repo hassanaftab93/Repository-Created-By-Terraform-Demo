@@ -1,6 +1,6 @@
 module "aws_key_pair_module" {
   source     = "./modules/aws.keypair"
-  awsKeyName = var.awsKeyName
+  awsKeyName = var.awsKeyName 
 }
 
 module "aws_security_group_module" {
