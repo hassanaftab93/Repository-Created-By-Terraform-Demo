@@ -24,5 +24,6 @@ resource "aws_security_group" "security_group" {
 
   tags = {
     Name = "allow_tls"
+    Name = "learning"
   }
 }

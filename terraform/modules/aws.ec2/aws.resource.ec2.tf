@@ -6,6 +6,7 @@ resource "aws_instance" "web" {
 
   tags = {
     Name = "${var.awsInstanceName}"
+    Name = "learning"
   }
 
   connection {

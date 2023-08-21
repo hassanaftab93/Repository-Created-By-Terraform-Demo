@@ -53,6 +53,12 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
   ```bash
     terraform init -migrate-state
   ```
+
+  Terraform prevent locking - Lock Mechanism using DynamoDB for AWS (noSQL)
+  
+  ```bash
+    DynamoDB -> Add Table -> TableName (name) -> Partition Key (LockID) -> Create
+  ```
   
   Extra Commands
   ```bash
