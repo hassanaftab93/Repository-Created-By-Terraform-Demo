@@ -48,6 +48,11 @@ Deployment Status: [![Deploy to Heroku](https://github.com/hassanaftab93/REPO-NA
     terraform destroy
     terraform destroy -target=resourcename
   ```
+
+  Terraform init: if changing backend block, run this first!
+  ```bash
+    terraform init -migrate-state
+  ```
   
   Extra Commands
   ```bash
