@@ -1,14 +1,12 @@
 module "aws_key_pair_module" {
   source     = "./modules/aws.keypair"
   awsKeyName = var.awsKeyName
-
 }
 
 module "aws_security_group_module" {
   source               = "./modules/aws.securitygroup"
   inboundPorts         = var.inboundPorts
   awsSecurityGroupName = var.awsSecurityGroupName
-
 }
 
 module "aws_ec2_module" {
