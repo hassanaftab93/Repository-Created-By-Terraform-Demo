@@ -1,0 +1,32 @@
+.PHONY: init
+init:
+	mkdir -p terraform && \
+	cd terraform && \
+	mkdir modules variables && \
+	cd variables && touch local.tfvars && cd .. && \
+	touch providers.tf variables.tf main.tf outputs.tf && \
+	terraform init
+
+.PHONY: plan
+plan:
+	terraform plan -lock=false -var-file ./variables/local.tfvars -out=tfplan
+
+.PHONY: fmt
+fmt:
+	terraform fmt -recursive
+
+.PHONY: apply
+apply:
+	terraform apply -lock=false tfplan
+
+.PHONY: destroy
+destroy:
+	terraform destroy -var-file ./variables/local.tfvars -auto-approve
+
+.PHONY: validate
+validate:
+	terraform validate
+
+.PHONY: refresh
+refresh:
+	terraform refresh -lock=false -var-file=./variables/local.tfvars
