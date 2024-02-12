@@ -6,7 +6,8 @@ init:
 	mkdir modules variables terraform-graph && \
 	cd variables && touch local.tfvars && cd .. && \
 	touch providers.tf variables.tf main.tf outputs.tf && \
-	terraform init
+	terraform init && \
+	code .
 
 .PHONY: plan
 plan:
