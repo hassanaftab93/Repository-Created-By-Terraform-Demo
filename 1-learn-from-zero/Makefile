@@ -7,6 +7,7 @@ init:
 	cd variables && touch local.tfvars && cd .. && \
 	touch providers.tf variables.tf main.tf outputs.tf && \
 	terraform init
+	code .
 
 .PHONY: plan
 plan:
