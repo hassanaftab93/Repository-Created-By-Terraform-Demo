@@ -1,7 +1,7 @@
 .PHONY: init
 init:
 ifeq ($(strip $(provider)),)
-	echo "Error: Please specify a provider name. Example: make init name=azurerm OR google OR aws"
+	@echo "Error: Please specify a provider name. Example: make init name=azurerm OR google OR aws"
 else
 	mkdir -p terraform && \
 	mkdir -p terraform/modules terraform/variables terraform/terraform-graph && \
@@ -19,6 +19,7 @@ ifeq ($(strip $(module)),)
 else
 	mkdir -p modules/$(module)
 	cp -r ../terraform-templates/modules/* modules/$(module)/
+	@echo "Created module in 'modules/$(module)' with main.tf, variables.tf, and outputs.tf"
 endif
 
 .PHONY: plan
@@ -48,3 +49,5 @@ refresh:
 .PHONY: graph
 graph:
 	terraform graph | dot -Tpdf > terraform-graph/graph.pdf
+
+MAKEFLAGS += --silent
