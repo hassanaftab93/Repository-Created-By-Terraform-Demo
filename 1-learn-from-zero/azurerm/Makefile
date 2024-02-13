@@ -94,3 +94,26 @@ refresh:
 .PHONY: graph
 graph:
 	terraform graph | dot -Tpdf > terraform-graph/graph.pdf
+
+.PHONY: module
+module:
+ifeq ($(strip $(NAME)),)
+	@echo "Error: Please specify a module name. Example: make module NAME=my_module"
+else
+	mkdir -p module/$(NAME)
+	touch module/$(NAME)/main.tf
+	touch module/$(NAME)/variables.tf
+	touch module/$(NAME)/outputs.tf
+	echo "resource \"resource_name\" \"name_in_terraform\" {" >> module/$(NAME)/main.tf
+	echo "  key = value" >> module/$(NAME)/main.tf
+	echo "}" >> module/$(NAME)/main.tf
+	echo 'output "name" {' >> module/$(NAME)/outputs.tf
+	echo '  description = "xyz"' >> module/$(NAME)/outputs.tf
+	echo '  value = "${azurerm_linux_web_app.example.name}"' >> module/$(NAME)/outputs.tf
+	echo '  depends_on = [azurerm_linux_web_app.example]' >> module/$(NAME)/outputs.tf
+	echo '}' >> module/$(NAME)/outputs.tf
+	echo "variable \"xyz\" {" >> module/$(NAME)/variables.tf
+	echo "  description = \"this is xyz description\"" >> module/$(NAME)/variables.tf
+	echo "}" >> module/$(NAME)/variables.tf
+	echo "Created module directory 'module/$(NAME)' with main.tf, variables.tf, and outputs.tf"
+endif
