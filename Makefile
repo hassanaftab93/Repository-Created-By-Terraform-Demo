@@ -6,8 +6,8 @@ else
 	mkdir -p terraform && \
 	mkdir -p terraform/modules terraform/variables terraform/terraform-graph && \
 	cp Makefile terraform/ && \
-	cp -r terraform-scripts/base/$(provider)/* terraform/ && \
-	cp -r terraform-scripts/variables/* terraform/variables/ && \
+	cp -r terraform-templates/base/$(provider)/* terraform/ && \
+	cp -r terraform-templates/variables/* terraform/variables/ && \
 	cd terraform && terraform init && \
 	code .
 endif
@@ -18,7 +18,7 @@ ifeq ($(strip $(module)),)
 	@echo "Error: Please specify a module name. Example: make module name=my_module"
 else
 	mkdir -p modules/$(module)
-	cp -r ../terraform-scripts/modules/* modules/$(module)/
+	cp -r ../terraform-templates/modules/* modules/$(module)/
 endif
 
 .PHONY: plan
