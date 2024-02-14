@@ -3,7 +3,7 @@
 #   value       = "${azurerm_linux_web_app.example.name}.azurewebsites.net"
 # }
 
-output "example_ouput" {
+output "example_output" {
   description = "desired_output of the deployed App Service"
   value       = ""
 }

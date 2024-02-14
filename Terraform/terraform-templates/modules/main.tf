@@ -1,4 +1,4 @@
-resource "resource_name" "name_in_terraform" {
+resource "resource_name" "this" {
 #   name                = "${var.app_service_name}-plan"
 #   location            = var.location
 #   resource_group_name = var.resource_group_name
