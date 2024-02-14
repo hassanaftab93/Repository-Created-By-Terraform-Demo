@@ -12,7 +12,6 @@ else
 	mkdir -p ../terraform/.terraform/custom-modules && \
 	cp -r terraform-templates/modules/* ../terraform/.terraform/custom-modules/ && \
 	code ../terraform
-	rm -rf ../Terraform
 endif
 
 .PHONY: module
