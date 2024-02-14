@@ -1,2 +1,2 @@
 # Variables passed locally
-xyz = "value"
+aws_kms_key_environment = "dev"

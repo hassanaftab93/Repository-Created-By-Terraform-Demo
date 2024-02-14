@@ -1,10 +1,7 @@
-# output "app_service_url" {
-#   description = "URL of the deployed App Service"
-#   value       = module.app_service.url
-# }
+output "aws_kms_key_alias" {
+  value = module.aws_kms_key.alias
+}
 
-# output "service_bus_primary_connection_string" {
-#   description = "Primary connection string of the deployed Service Bus Namespace"
-#   value       = module.service_bus.primary_connection_string
-#   sensitive   = true
-# }
+output "aws_kms_key_id" {
+  value = module.aws_kms_key.id
+}
